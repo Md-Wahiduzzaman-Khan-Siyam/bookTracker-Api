@@ -1,6 +1,6 @@
 namespace bookTracker_API.Models;
 
-public class Books
+public class Book
 {
     public int Id { get; set; }
     
@@ -12,5 +12,5 @@ public class Books
     
     public required string Genre { get; set; }
     
-    public required bool IsRead { get; set; }
+    public bool IsRead { get; set; }
 }
