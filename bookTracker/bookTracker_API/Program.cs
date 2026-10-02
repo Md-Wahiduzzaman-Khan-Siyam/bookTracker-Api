@@ -11,7 +11,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<BookTrackerDbContext>(options => 
     options.UseMySql(builder.Configuration.GetConnectionString("BookTrackerConnectionString"),
-        new MySqlServerVersion(new Version(9, 7, 1)))
+        //new MySqlServerVersion(new Version(9, 7, 1)))
+        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("BookTrackerConnectionString")))
     );
 
 var app = builder.Build();
